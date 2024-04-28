@@ -1,0 +1,9 @@
+---
+- name: Update servers
+  hosts: all
+  become: yes
+  tasks:
+    - apt:
+        update_cache: yes
+        upgrade: full
+        autoremove: yes
