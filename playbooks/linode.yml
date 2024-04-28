@@ -1,0 +1,15 @@
+---
+- name: Create Linode
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12"
+  tasks:
+    - name: Create a new Linode
+      linode_v4:
+        access_token: "{{ linode_access_token }}"
+        label: ansible-linode
+        type: g6-nanode-1
+        region: it-mil
+        image: linode/debian12
+        root_pass: "{{ linode_root_pass }}"
+        state: present
