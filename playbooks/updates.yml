@@ -1,6 +1,8 @@
 ---
 - name: Update servers
-  hosts: all
+  hosts:
+    - debian
+    - ubuntu
   become: yes
   tasks:
     - apt:
