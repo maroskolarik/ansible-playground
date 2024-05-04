@@ -1,6 +1,8 @@
 ---
 - name: Set up web servers
-  hosts: all
+  hosts:
+    - debian
+    - ubuntu
   become: yes
   tasks:
     - name: Install Apache
